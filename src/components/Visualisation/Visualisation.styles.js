@@ -12,5 +12,5 @@ export const VisualisationContainer = styled.div`
 export const SingleBar = styled.div`
    width: 24px;
    background-color: royalblue;
-   height: 90%;
+   height: ${({ height }) => height + '%'};
 `;
