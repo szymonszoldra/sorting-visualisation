@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { AppContainer } from './App.styles';
-import Header from '../Header/Header.component';
+import { AppContainer, HeaderContainer, ButtonContainer } from './App.styles';
 import Visualisation from '../Visualisation/Visualisation.component';
 
-const App = () => (
-   <AppContainer>
-      <Header />
-      <Visualisation />
-   </AppContainer>
-);
+const App = () => {
+   const [algorithm, setAlgorithm] = useState('');
+
+   return (
+      <AppContainer>
+         <HeaderContainer>
+            <ButtonContainer>Reset!</ButtonContainer>
+            <ButtonContainer onClick={() => setAlgorithm('bubble')}>
+               Bubble Sort
+            </ButtonContainer>
+            <label htmlFor='spacing'>Speed:</label>
+            <input
+               id='speed'
+               type='range'
+               name='speed'
+               min='1000'
+               max='5000'
+               defaultValue='1000'
+            ></input>
+         </HeaderContainer>
+         <Visualisation algorithm={algorithm} />
+      </AppContainer>
+   );
+};
 
 export default App;

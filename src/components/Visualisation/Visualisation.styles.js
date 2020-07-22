@@ -6,11 +6,13 @@ export const VisualisationContainer = styled.div`
    height: 85vh;
    margin: 0 50px;
    background-color: pink;
-   transform: rotate(180deg);
+   align-items: flex-end;
+   justify-content: space-between;
 `;
 
 export const SingleBar = styled.div`
-   width: 24px;
+   width: 36px;
+   padding: 0 2px;
    background-color: royalblue;
    height: ${({ height }) => height + '%'};
 `;
