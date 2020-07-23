@@ -1,5 +1,7 @@
 import sleep from '../functions/sleep';
 import setAllToBlue from '../functions/setAllToBlue';
+import reload from '../functions/reload';
+
 
 
 const insertionSort = async (howMany, arr, setArr) => {
@@ -66,6 +68,7 @@ const insertionSort = async (howMany, arr, setArr) => {
   await sleep(delay);
   setAllToBlue();
 
+  reload();
 }
 
 export default insertionSort;

@@ -1,6 +1,7 @@
 import setColor from '../functions/setColor';
 import sleep from '../functions/sleep';
 import setAllToBlue from '../functions/setAllToBlue';
+import reload from '../functions/reload';
 
 
 const bubbleSort = async (howMany, arr, setArr) => {
@@ -39,6 +40,7 @@ const bubbleSort = async (howMany, arr, setArr) => {
     }
   }
   setAllToBlue();
+  reload();
 };
 
 export default bubbleSort

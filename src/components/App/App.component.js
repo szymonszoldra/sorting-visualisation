@@ -7,17 +7,20 @@ const App = () => {
    return (
       <AppContainer>
          <HeaderContainer>
-            <ButtonContainer className='reset-btn'>Reset!</ButtonContainer>
-            <ButtonContainer className='bubble-btn'>
+            {/* <ButtonContainer className='reset-btn'>Reset!</ButtonContainer> */}
+            <ButtonContainer id='bubble' className='bubble-btn btn'>
                Bubble Sort
             </ButtonContainer>
-            <ButtonContainer className='selection-btn'>
+            <ButtonContainer id='selection' className='selection-btn btn'>
                Selection Sort
             </ButtonContainer>
-            <ButtonContainer className='insertion-btn'>
+
+            <ButtonContainer id='insertion' className='insertion-btn btn'>
                Insertion Sort
             </ButtonContainer>
-            <ButtonContainer className='merge-btn'>Merge Sort</ButtonContainer>
+            <ButtonContainer id='merge' className='merge-btn btn'>
+               Merge Sort
+            </ButtonContainer>
             <label htmlFor='spacing'>Speed:</label>
             <input
                style={{ direction: 'rtl' }}

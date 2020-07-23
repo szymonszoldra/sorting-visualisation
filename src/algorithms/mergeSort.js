@@ -1,3 +1,5 @@
+import reload from '../functions/reload';
+
 const mergeSortContainer = (arr, setArr) => {
   const newArr = arr;
 
@@ -27,6 +29,7 @@ const mergeSortContainer = (arr, setArr) => {
   }
 
   setArr(mergeSort(newArr));
+  reload();
 }
 
 export default mergeSortContainer;
