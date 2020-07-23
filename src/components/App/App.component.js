@@ -11,8 +11,12 @@ const App = () => {
             <ButtonContainer className='bubble-btn'>
                Bubble Sort
             </ButtonContainer>
+            <ButtonContainer className='selection-btn'>
+               Selection Sort
+            </ButtonContainer>
             <label htmlFor='spacing'>Speed:</label>
             <input
+               style={{ direction: 'rtl' }}
                id='speed'
                type='range'
                name='speed'
