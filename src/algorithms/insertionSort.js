@@ -1,4 +1,6 @@
 import sleep from '../functions/sleep';
+import setAllToBlue from '../functions/setAllToBlue';
+
 
 const insertionSort = async (howMany, arr, setArr) => {
 
@@ -9,9 +11,8 @@ const insertionSort = async (howMany, arr, setArr) => {
     await sleep(delay);
 
     const currentBars = [...document.querySelectorAll('.singleBar')];
-    currentBars.forEach(
-      (bar) => (bar.style.backgroundColor = 'royalblue')
-    );
+    setAllToBlue();
+
 
     currentBars[i].style.backgroundColor = 'yellow';
 
@@ -32,11 +33,8 @@ const insertionSort = async (howMany, arr, setArr) => {
     }
     setArr([...newArr]);
   }
+  setAllToBlue();
 
-  const currentBars = [...document.querySelectorAll('.singleBar')];
-  currentBars.forEach(
-    (bar) => (bar.style.backgroundColor = 'royalblue')
-  );
 }
 
 export default insertionSort;

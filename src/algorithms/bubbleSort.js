@@ -1,5 +1,7 @@
 import setColor from '../functions/setColor';
 import sleep from '../functions/sleep';
+import setAllToBlue from '../functions/setAllToBlue';
+
 
 const bubbleSort = async (howMany, arr, setArr) => {
   let counter = 1;
@@ -12,9 +14,7 @@ const bubbleSort = async (howMany, arr, setArr) => {
       await sleep(delay);
 
       const currentBars = [...document.querySelectorAll('.singleBar')];
-      currentBars.forEach(
-        (bar) => (bar.style.backgroundColor = 'royalblue')
-      );
+      setAllToBlue();
 
       setColor(currentBars[j], currentBars[j + 1], 'yellow');
 
@@ -38,8 +38,7 @@ const bubbleSort = async (howMany, arr, setArr) => {
       break;
     }
   }
-  const currentBars = [...document.querySelectorAll('.singleBar')];
-  currentBars.forEach((bar) => (bar.style.backgroundColor = 'royalblue'));
+  setAllToBlue();
 };
 
 export default bubbleSort

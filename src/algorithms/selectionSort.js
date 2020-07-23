@@ -1,5 +1,6 @@
 import setColor from '../functions/setColor';
 import sleep from '../functions/sleep';
+import setAllToBlue from '../functions/setAllToBlue';
 
 const selectionSort = async (howMany, arr, setArr) => {
   for (let i = 0; i < howMany; i++) {
@@ -11,9 +12,7 @@ const selectionSort = async (howMany, arr, setArr) => {
       await sleep(delay);
 
       const currentBars = [...document.querySelectorAll('.singleBar')];
-      currentBars.forEach(
-        (bar) => (bar.style.backgroundColor = 'royalblue')
-      );
+      setAllToBlue();
 
       setColor(currentBars[currentSmallest], currentBars[j], 'yellow');
 
@@ -44,8 +43,7 @@ const selectionSort = async (howMany, arr, setArr) => {
     }
 
   }
-  const currentBars = [...document.querySelectorAll('.singleBar')];
-  currentBars.forEach((bar) => (bar.style.backgroundColor = 'royalblue'));
+  setAllToBlue();
 }
 
 export default selectionSort;
