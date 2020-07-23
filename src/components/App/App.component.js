@@ -14,6 +14,9 @@ const App = () => {
             <ButtonContainer className='selection-btn'>
                Selection Sort
             </ButtonContainer>
+            <ButtonContainer className='insertion-btn'>
+               Insertion Sort
+            </ButtonContainer>
             <label htmlFor='spacing'>Speed:</label>
             <input
                style={{ direction: 'rtl' }}
