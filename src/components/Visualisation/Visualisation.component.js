@@ -40,29 +40,6 @@ const Visualisation = () => {
       document
          .querySelectorAll('.btn')
          .forEach((btn) => btn.addEventListener('click', eventHandler));
-
-      // document.querySelector('.selection-btn').addEventListener('click', () => {
-      //    selectionSort(30, arr, setArr);
-      //    console.log('selection!');
-      // });
-
-      // document.querySelector('.insertion-btn').addEventListener('click', () => {
-      //    insertionSort(30, arr, setArr);
-      //    console.log('insertion!');
-      // });
-
-      // document.querySelector('.merge-btn').addEventListener('click', () => {
-      //    mergeSortContainer(arr, setArr);
-      //    console.log('merge!');
-      //    alert(
-      //       'Right know it only sorts the array, still need to figure out how to implement visualisation'
-      //    );
-      // });
-
-      // document.querySelector('.reset-btn').addEventListener('click', () => {
-      //    setArr(generateArray(30));
-      //    console.log('reset!');
-      // });
    }, []);
 
    return (

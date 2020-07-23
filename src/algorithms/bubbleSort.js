@@ -32,7 +32,6 @@ const bubbleSort = async (howMany, arr, setArr) => {
       } else {
         setColor(currentBars[j], currentBars[j + 1], 'red');
       }
-      console.log(counter);
       setArr([...newArr]);
     }
     if (!counter) {
