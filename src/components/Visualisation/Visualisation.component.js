@@ -6,6 +6,7 @@ import generateArray from '../../functions/generateArray';
 import bubbleSort from '../../algorithms/bubbleSort';
 import selectionSort from '../../algorithms/selectionSort';
 import insertionSort from '../../algorithms/insertionSort';
+import mergeSortContainer from '../../algorithms/mergeSort';
 
 const Visualisation = () => {
    const [arr, setArr] = useState(generateArray(30));
@@ -24,6 +25,14 @@ const Visualisation = () => {
       document.querySelector('.insertion-btn').addEventListener('click', () => {
          insertionSort(30, arr, setArr);
          console.log('insertion!');
+      });
+
+      document.querySelector('.merge-btn').addEventListener('click', () => {
+         mergeSortContainer(arr, setArr);
+         console.log('merge!');
+         alert(
+            'Right know it only sorts the array, still need to figure out how to implement visualisation'
+         );
       });
 
       document.querySelector('.reset-btn').addEventListener('click', () => {

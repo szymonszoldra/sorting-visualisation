@@ -17,6 +17,7 @@ const App = () => {
             <ButtonContainer className='insertion-btn'>
                Insertion Sort
             </ButtonContainer>
+            <ButtonContainer className='merge-btn'>Merge Sort</ButtonContainer>
             <label htmlFor='spacing'>Speed:</label>
             <input
                style={{ direction: 'rtl' }}
