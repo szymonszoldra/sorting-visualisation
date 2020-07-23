@@ -9,15 +9,14 @@ const selectionSort = async (howMany, arr, setArr) => {
     let currentSmallest = i;
     const newArr = arr;
     for (let j = i + 1; j < howMany; j++) {
-      const delay = parseInt(document.querySelector('#speed').value);
-      await sleep(delay);
+      await sleep();
 
       const currentBars = [...document.querySelectorAll('.singleBar')];
       setAllToBlue();
 
       setColor(currentBars[currentSmallest], currentBars[j], 'yellow');
 
-      await sleep(delay);
+      await sleep();
 
       if (newArr[currentSmallest] > newArr[j]) {
         setColor(currentBars[currentSmallest], currentBars[j], 'green');
@@ -29,20 +28,22 @@ const selectionSort = async (howMany, arr, setArr) => {
       setArr([...newArr]);
     }
 
-    const delay = parseInt(document.querySelector('#speed').value);
+
     const currentBars = [...document.querySelectorAll('.singleBar')];
 
     if (newArr[currentSmallest] !== newArr[i]) {
       setAllToBlue();
       setColor(currentBars[currentSmallest], currentBars[i], 'orange');
-      await sleep(delay);
+      await sleep();
       const temp = newArr[currentSmallest];
       newArr[currentSmallest] = newArr[i];
       newArr[i] = temp;
       setArr([...newArr]);
     } else {
       currentBars[currentSmallest].style.backgroundColor = 'orange';
-      await sleep(delay * 2);
+
+      await sleep();
+      await sleep();
     }
 
   }

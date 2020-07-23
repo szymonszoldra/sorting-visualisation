@@ -10,15 +10,14 @@ const insertionSort = async (howMany, arr, setArr) => {
   for (let i = 1; i < howMany; i++) {
     const newArr = arr;
 
-    const delay = parseInt(document.querySelector('#speed').value);
-    await sleep(delay);
+    await sleep();
 
     const currentBars = [...document.querySelectorAll('.singleBar')];
 
     for (let index = 0; index < i; index++) {
       currentBars[index].style.backgroundColor = 'orange';
     }
-    await sleep(delay);
+    await sleep();
 
     currentBars[i].style.backgroundColor = 'yellow';
 
@@ -32,8 +31,7 @@ const insertionSort = async (howMany, arr, setArr) => {
 
     } else {
       let flag = true;
-      const delay = parseInt(document.querySelector('#speed').value);
-      await sleep(delay);
+      await sleep();
       for (let j = 1; j < i; j++) {
 
         if (newArr[i] > newArr[j - 1] && newArr[i] <= newArr[j]) {
@@ -56,7 +54,7 @@ const insertionSort = async (howMany, arr, setArr) => {
         indexOfPreviousCounter = i;
       }
     }
-    await sleep(delay);
+    await sleep();
     setArr([...newArr]);
     currentBars[indexOfPreviousCounter].style.backgroundColor = 'yellow';
     if (indexOfPreviousCounter !== i) {
@@ -64,8 +62,7 @@ const insertionSort = async (howMany, arr, setArr) => {
 
     }
   }
-  const delay = parseInt(document.querySelector('#speed').value);
-  await sleep(delay);
+  await sleep();
   setAllToBlue();
 
   reload();

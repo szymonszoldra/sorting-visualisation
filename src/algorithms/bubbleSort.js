@@ -11,19 +11,18 @@ const bubbleSort = async (howMany, arr, setArr) => {
     for (let j = 0; j < howMany - 1 - i; j++) {
       const newArr = arr;
 
-      const delay = parseInt(document.querySelector('#speed').value);
-      await sleep(delay);
+      await sleep();
 
       const currentBars = [...document.querySelectorAll('.singleBar')];
       setAllToBlue();
 
       setColor(currentBars[j], currentBars[j + 1], 'yellow');
 
-      await sleep(delay);
+      await sleep();
 
       if (newArr[j] > newArr[j + 1]) {
         setColor(currentBars[j], currentBars[j + 1], 'green');
-        await sleep(delay);
+        await sleep();
 
         const temp = newArr[j];
         newArr[j] = newArr[j + 1];
