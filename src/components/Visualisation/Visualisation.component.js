@@ -27,7 +27,9 @@ const Visualisation = () => {
                key={index}
                className='singleBar'
                height={Math.floor(item / 12)}
-            />
+            >
+               {item}
+            </SingleBar>
          ))}
       </VisualisationContainer>
    );

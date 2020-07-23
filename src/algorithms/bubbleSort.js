@@ -22,6 +22,8 @@ const bubbleSort = async (howMany, arr, setArr) => {
 
       if (newArr[j] > newArr[j + 1]) {
         setColor(currentBars[j], currentBars[j + 1], 'green');
+        await sleep(delay);
+
         const temp = newArr[j];
         newArr[j] = newArr[j + 1];
         newArr[j + 1] = temp;
