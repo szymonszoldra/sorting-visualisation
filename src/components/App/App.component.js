@@ -21,6 +21,9 @@ const App = () => {
             <ButtonContainer id='merge' className='merge-btn btn'>
                Merge Sort
             </ButtonContainer>
+            <ButtonContainer id='coctail' className='coctail-btn btn'>
+               Coctail Sort
+            </ButtonContainer>
             <label htmlFor='spacing'>Speed:</label>
             <input
                style={{ direction: 'rtl' }}

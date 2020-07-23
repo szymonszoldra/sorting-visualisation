@@ -7,6 +7,7 @@ import bubbleSort from '../../algorithms/bubbleSort';
 import selectionSort from '../../algorithms/selectionSort';
 import insertionSort from '../../algorithms/insertionSort';
 import mergeSortContainer from '../../algorithms/mergeSort';
+import coctailSort from '../../algorithms/coctailSort';
 
 const Visualisation = () => {
    const [arr, setArr] = useState(generateArray(30));
@@ -27,6 +28,9 @@ const Visualisation = () => {
                'Right know it only sorts the array, still need to figure out how to implement visualisation'
             );
             mergeSortContainer(arr, setArr);
+            break;
+         case 'coctail':
+            coctailSort(30, arr, setArr);
             break;
          default:
             break;
