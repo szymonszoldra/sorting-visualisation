@@ -9,66 +9,56 @@ const coctailSort = async (howMany, arr, setArr) => {
   let hasChanged = true;
 
   while (hasChanged) {
-    const delay = parseInt(document.querySelector('#speed').value);
-    await sleep(delay);
+    await sleep();
 
     let newArr = arr;
     hasChanged = false;
 
     for (let i = bottom; i < top; i++) {
-
       const currentBars = [...document.querySelectorAll('.singleBar')];
       setAllToBlue();
-
       setColor(currentBars[i], currentBars[i + 1], 'yellow');
-      const delay = parseInt(document.querySelector('#speed').value);
-      await sleep(delay);
+      await sleep();
 
       if (newArr[i] > newArr[i + 1]) {
         setColor(currentBars[i], currentBars[i + 1], 'green');
-        const delay = parseInt(document.querySelector('#speed').value);
-        await sleep(delay);
+        await sleep();
         const temp = newArr[i];
         newArr[i] = newArr[i + 1];
         newArr[i + 1] = temp;
         hasChanged = true;
-
+        setArr([...newArr]);
+        await sleep();
       } else {
         setColor(currentBars[i], currentBars[i + 1], 'red');
-        const delay = parseInt(document.querySelector('#speed').value);
-        await sleep(delay);
+        await sleep();
       }
-      setArr([...newArr]);
-      await sleep(delay);
+
     }
+
     newArr = arr;
     top--;
+
     for (let i = top; i > bottom; i--) {
       const currentBars = [...document.querySelectorAll('.singleBar')];
       setAllToBlue();
-
       setColor(currentBars[i], currentBars[i - 1], 'yellow');
-      const delay = parseInt(document.querySelector('#speed').value);
-      await sleep(delay);
-
+      await sleep();
 
       if (newArr[i] < newArr[i - 1]) {
-
         setColor(currentBars[i], currentBars[i - 1], 'green');
-        const delay = parseInt(document.querySelector('#speed').value);
-        await sleep(delay);
+        await sleep();
         const temp = newArr[i];
         newArr[i] = newArr[i - 1];
         newArr[i - 1] = temp;
         hasChanged = true;
 
+        setArr([...newArr]);
+        await sleep();
       } else {
         setColor(currentBars[i], currentBars[i - 1], 'red');
-        const delay = parseInt(document.querySelector('#speed').value);
-        await sleep(delay);
+        await sleep();
       }
-      setArr([...newArr]);
-      await sleep(delay);
     }
     newArr = arr;
     bottom++;
