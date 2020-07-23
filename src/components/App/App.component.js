@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { AppContainer, HeaderContainer, ButtonContainer } from './App.styles';
 import Visualisation from '../Visualisation/Visualisation.component';
 
 const App = () => {
-   const [algorithm, setAlgorithm] = useState('');
-
    return (
       <AppContainer>
          <HeaderContainer>
-            <ButtonContainer>Reset!</ButtonContainer>
-            <ButtonContainer onClick={() => setAlgorithm('bubble')}>
+            <ButtonContainer className='reset-btn'>Reset!</ButtonContainer>
+            <ButtonContainer className='bubble-btn'>
                Bubble Sort
             </ButtonContainer>
             <label htmlFor='spacing'>Speed:</label>
@@ -18,12 +16,12 @@ const App = () => {
                id='speed'
                type='range'
                name='speed'
-               min='1000'
-               max='5000'
-               defaultValue='1000'
+               min='10'
+               max='1000'
+               defaultValue='300'
             ></input>
          </HeaderContainer>
-         <Visualisation algorithm={algorithm} />
+         <Visualisation />
       </AppContainer>
    );
 };
