@@ -24,7 +24,7 @@ const App = () => {
             <ButtonContainer id='coctail' className='coctail-btn btn'>
                Coctail Sort
             </ButtonContainer>
-            <label htmlFor='spacing'>Speed:</label>
+            <label htmlFor='speed'>Speed:</label>
             <input
                style={{ direction: 'rtl' }}
                id='speed'
