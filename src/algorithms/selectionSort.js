@@ -2,6 +2,8 @@ import setColor from '../functions/setColor';
 import sleep from '../functions/sleep';
 import setAllToBlue from '../functions/setAllToBlue';
 import reload from '../functions/reload';
+import updateCompares from '../functions/updateCompares';
+
 
 
 const selectionSort = async (howMany, arr, setArr) => {
@@ -15,7 +17,7 @@ const selectionSort = async (howMany, arr, setArr) => {
       setAllToBlue();
 
       setColor(currentBars[currentSmallest], currentBars[j], 'yellow');
-
+      updateCompares();
       await sleep();
 
       if (newArr[currentSmallest] > newArr[j]) {
@@ -34,6 +36,7 @@ const selectionSort = async (howMany, arr, setArr) => {
     if (newArr[currentSmallest] !== newArr[i]) {
       setAllToBlue();
       setColor(currentBars[currentSmallest], currentBars[i], 'orange');
+      updateCompares();
       await sleep();
       const temp = newArr[currentSmallest];
       newArr[currentSmallest] = newArr[i];
@@ -41,7 +44,7 @@ const selectionSort = async (howMany, arr, setArr) => {
       setArr([...newArr]);
     } else {
       currentBars[currentSmallest].style.backgroundColor = 'orange';
-
+      updateCompares();
       await sleep();
       await sleep();
     }

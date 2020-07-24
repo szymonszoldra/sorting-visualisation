@@ -1,6 +1,11 @@
 import React from 'react';
 
-import { AppContainer, HeaderContainer, ButtonContainer } from './App.styles';
+import {
+   AppContainer,
+   HeaderContainer,
+   ButtonContainer,
+   CompareContainer,
+} from './App.styles';
 import Visualisation from '../Visualisation/Visualisation.component';
 
 const App = () => {
@@ -34,6 +39,9 @@ const App = () => {
                max='1000'
                defaultValue='300'
             ></input>
+            <CompareContainer>
+               Compares: <span className='compares'>0</span>
+            </CompareContainer>
          </HeaderContainer>
          <Visualisation />
       </AppContainer>

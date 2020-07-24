@@ -2,6 +2,8 @@ import setColor from '../functions/setColor';
 import sleep from '../functions/sleep';
 import setAllToBlue from '../functions/setAllToBlue';
 import reload from '../functions/reload';
+import updateCompares from '../functions/updateCompares';
+
 
 const coctailSort = async (howMany, arr, setArr) => {
   let bottom = 0;

@@ -2,7 +2,7 @@ import setColor from '../functions/setColor';
 import sleep from '../functions/sleep';
 import setAllToBlue from '../functions/setAllToBlue';
 import reload from '../functions/reload';
-
+import updateCompares from '../functions/updateCompares';
 
 const bubbleSort = async (howMany, arr, setArr) => {
   let counter = 1;
@@ -10,14 +10,13 @@ const bubbleSort = async (howMany, arr, setArr) => {
     counter = 0;
     for (let j = 0; j < howMany - 1 - i; j++) {
       const newArr = arr;
-
       await sleep();
 
       const currentBars = [...document.querySelectorAll('.singleBar')];
       setAllToBlue();
 
       setColor(currentBars[j], currentBars[j + 1], 'yellow');
-
+      updateCompares();
       await sleep();
 
       if (newArr[j] > newArr[j + 1]) {

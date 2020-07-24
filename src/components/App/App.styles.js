@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const AppContainer = styled.div`
+export const AppContainer = styled.div `
    height: 100vh;
    width: 100vw;
    background-color: #eee;
@@ -10,7 +10,7 @@ export const AppContainer = styled.div`
    flex-direction: column;
 `;
 
-export const HeaderContainer = styled.header`
+export const HeaderContainer = styled.header `
    display: flex;
    height: 15vh;
    padding: 20px;
@@ -18,7 +18,7 @@ export const HeaderContainer = styled.header`
    align-items: center;
 `;
 
-export const ButtonContainer = styled.button`
+export const ButtonContainer = styled.button `
    background-color: #ccc;
    border-radius: 15px;
    margin-right: 30px;
@@ -26,3 +26,8 @@ export const ButtonContainer = styled.button`
    width: 150px;
    height: 30px;
 `;
+
+export const CompareContainer = styled.div `
+width: 150px;
+margin-left: 30px;
+`
