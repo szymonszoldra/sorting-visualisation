@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sorting Visualisation
 
-## Available Scripts
+This project was built by me from scratch, without using any tutorials. My main idea was to learn how React Hooks and Styled Components work.
 
-In the project directory, you can run:
+## live version
 
-### `npm start`
+see it live [**here**](https://szymonszoldra.github.io/sorting-visualisation/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### algorithms
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+-  bubble sort
+-  selection sort
+-  insertion sort
+-  coctail shaker sort
+-  merge sort (only the algorithm so far)
 
-### `npm test`
+### technologies
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-  React.js
+-  React Hooks
+-  Styled Components
+-  HTML 5
 
-### `npm run build`
+### instalation
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. clone this repository to your directory
+2. open your terminal in main directory of the repository
+3. write inside:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```shell script
+npm install
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+if you do not have the _Node Package Manager_ on your computer you can download it from [**here**](https://nodejs.org/en/download/)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+the application will start by default on **localhost:3000/**
