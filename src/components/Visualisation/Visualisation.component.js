@@ -35,9 +35,10 @@ const Visualisation = () => {
          default:
             break;
       }
-      document
-         .querySelectorAll('.btn')
-         .forEach((btn) => btn.removeEventListener('click', eventHandler));
+      document.querySelectorAll('.btn').forEach((btn) => {
+         btn.removeEventListener('click', eventHandler);
+         btn.disabled = true;
+      });
    };
 
    useEffect(() => {
