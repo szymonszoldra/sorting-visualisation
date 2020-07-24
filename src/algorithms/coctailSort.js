@@ -21,7 +21,7 @@ const coctailSort = async (howMany, arr, setArr) => {
       setAllToBlue();
       setColor(currentBars[i], currentBars[i + 1], 'yellow');
       await sleep();
-
+      updateCompares();
       if (newArr[i] > newArr[i + 1]) {
         setColor(currentBars[i], currentBars[i + 1], 'green');
         await sleep();
@@ -46,7 +46,7 @@ const coctailSort = async (howMany, arr, setArr) => {
       setAllToBlue();
       setColor(currentBars[i], currentBars[i - 1], 'yellow');
       await sleep();
-
+      updateCompares();
       if (newArr[i] < newArr[i - 1]) {
         setColor(currentBars[i], currentBars[i - 1], 'green');
         await sleep();
