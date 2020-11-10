@@ -1,6 +1,6 @@
 //something like sleep() function in other languages
-const sleep = async () => {
-  const delay = parseInt(document.querySelector('#speed').value);
+const sleep = async ({current}) => {
+  const delay = parseInt(current.value);
   return await new Promise((resolve) => setTimeout(resolve, delay));
 };
 

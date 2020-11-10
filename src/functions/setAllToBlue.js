@@ -1,5 +1,5 @@
-const setAllToBlue = () => {
-  const currentBars = [...document.querySelectorAll('.singleBar')];
+const setAllToBlue = (barsRef) => {
+  const currentBars = [...barsRef.current.children];
   currentBars.forEach((bar) => (bar.style.backgroundColor = 'royalblue'));
 }
 

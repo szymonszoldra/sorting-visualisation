@@ -5,35 +5,35 @@ import reload from '../functions/reload';
 import updateCompares from '../functions/updateCompares';
 
 
-const coctailSort = async (howMany, arr, setArr) => {
+const coctailSort = async ({howMany, arr, setArr, speedRef, barsRef, comparesRef}) => {
   let bottom = 0;
   let top = howMany - 1;
   let hasChanged = true;
 
   while (hasChanged) {
-    await sleep();
+    await sleep(speedRef);
 
     let newArr = arr;
     hasChanged = false;
 
     for (let i = bottom; i < top; i++) {
-      const currentBars = [...document.querySelectorAll('.singleBar')];
-      setAllToBlue();
+      const currentBars = [...barsRef.current.children];
+      setAllToBlue(barsRef);
       setColor(currentBars[i], currentBars[i + 1], 'yellow');
-      await sleep();
-      updateCompares();
+      await sleep(speedRef);
+      updateCompares(comparesRef);
       if (newArr[i] > newArr[i + 1]) {
         setColor(currentBars[i], currentBars[i + 1], 'green');
-        await sleep();
+        await sleep(speedRef);
         const temp = newArr[i];
         newArr[i] = newArr[i + 1];
         newArr[i + 1] = temp;
         hasChanged = true;
         setArr([...newArr]);
-        await sleep();
+        await sleep(speedRef);
       } else {
         setColor(currentBars[i], currentBars[i + 1], 'red');
-        await sleep();
+        await sleep(speedRef);
       }
 
     }
@@ -42,30 +42,30 @@ const coctailSort = async (howMany, arr, setArr) => {
     top--;
 
     for (let i = top; i > bottom; i--) {
-      const currentBars = [...document.querySelectorAll('.singleBar')];
-      setAllToBlue();
+      const currentBars = [...barsRef.current.children];
+      setAllToBlue(barsRef);
       setColor(currentBars[i], currentBars[i - 1], 'yellow');
-      await sleep();
-      updateCompares();
+      await sleep(speedRef);
+      updateCompares(comparesRef);
       if (newArr[i] < newArr[i - 1]) {
         setColor(currentBars[i], currentBars[i - 1], 'green');
-        await sleep();
+        await sleep(speedRef);
         const temp = newArr[i];
         newArr[i] = newArr[i - 1];
         newArr[i - 1] = temp;
         hasChanged = true;
 
         setArr([...newArr]);
-        await sleep();
+        await sleep(speedRef);
       } else {
         setColor(currentBars[i], currentBars[i - 1], 'red');
-        await sleep();
+        await sleep(speedRef);
       }
     }
     newArr = arr;
     bottom++;
   }
-  setAllToBlue();
+  setAllToBlue(barsRef);
   reload();
 }
 

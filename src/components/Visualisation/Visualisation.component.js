@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
+
+import AppContext from '../../context/AppContext';
 import { VisualisationContainer, SingleBar } from './Visualisation.styles';
 
 import generateArray from '../../functions/generateArray';
@@ -11,17 +13,20 @@ import coctailSort from '../../algorithms/coctailSort';
 
 const Visualisation = () => {
    const [arr, setArr] = useState(generateArray(30));
-
+   const {speedRef, comparesRef, buttons} = useContext(AppContext);
+   const barsRef = useRef(null);
    const eventHandler = (e) => {
+      const params = {howMany: 30, arr, setArr, speedRef, barsRef, comparesRef};
+
       switch (e.target.id) {
          case 'bubble':
-            bubbleSort(30, arr, setArr);
+            bubbleSort(params);
             break;
          case 'selection':
-            selectionSort(30, arr, setArr);
+            selectionSort(params);
             break;
          case 'insertion':
-            insertionSort(30, arr, setArr);
+            insertionSort(params);
             break;
          case 'merge':
             alert(
@@ -30,25 +35,24 @@ const Visualisation = () => {
             mergeSortContainer(arr, setArr);
             break;
          case 'coctail':
-            coctailSort(30, arr, setArr);
+            coctailSort(params);
             break;
          default:
             break;
       }
-      document.querySelectorAll('.btn').forEach((btn) => {
-         btn.removeEventListener('click', eventHandler);
-         btn.disabled = true;
+      buttons.forEach((btn) => {
+         btn.current.removeEventListener('click', eventHandler);
+         btn.current.disabled = true;
       });
    };
 
    useEffect(() => {
-      document
-         .querySelectorAll('.btn')
-         .forEach((btn) => btn.addEventListener('click', eventHandler));
+      buttons
+         .forEach((btn) => btn.current.addEventListener('click', eventHandler));
    }, []);
 
    return (
-      <VisualisationContainer>
+      <VisualisationContainer ref={barsRef}>
          {arr.map((item, index) => (
             <SingleBar
                key={index}

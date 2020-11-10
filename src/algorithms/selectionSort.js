@@ -6,19 +6,19 @@ import updateCompares from '../functions/updateCompares';
 
 
 
-const selectionSort = async (howMany, arr, setArr) => {
+const selectionSort = async ({howMany, arr, setArr, speedRef, barsRef, comparesRef}) => {
   for (let i = 0; i < howMany; i++) {
     let currentSmallest = i;
     const newArr = arr;
     for (let j = i + 1; j < howMany; j++) {
-      await sleep();
+      await sleep(speedRef);
 
-      const currentBars = [...document.querySelectorAll('.singleBar')];
-      setAllToBlue();
+      const currentBars = [...barsRef.current.children];
+      setAllToBlue(barsRef);
 
       setColor(currentBars[currentSmallest], currentBars[j], 'yellow');
-      updateCompares();
-      await sleep();
+      updateCompares(comparesRef);
+      await sleep(speedRef);
 
       if (newArr[currentSmallest] > newArr[j]) {
         setColor(currentBars[currentSmallest], currentBars[j], 'green');
@@ -31,26 +31,26 @@ const selectionSort = async (howMany, arr, setArr) => {
     }
 
 
-    const currentBars = [...document.querySelectorAll('.singleBar')];
+    const currentBars = [...barsRef.current.children];
 
     if (newArr[currentSmallest] !== newArr[i]) {
-      setAllToBlue();
+      setAllToBlue(barsRef);
       setColor(currentBars[currentSmallest], currentBars[i], 'orange');
-      updateCompares();
-      await sleep();
+      updateCompares(comparesRef);
+      await sleep(speedRef);
       const temp = newArr[currentSmallest];
       newArr[currentSmallest] = newArr[i];
       newArr[i] = temp;
       setArr([...newArr]);
     } else {
       currentBars[currentSmallest].style.backgroundColor = 'orange';
-      updateCompares();
-      await sleep();
-      await sleep();
+      updateCompares(comparesRef);
+      await sleep(speedRef);
+      await sleep(speedRef);
     }
 
   }
-  setAllToBlue();
+  setAllToBlue(barsRef);
   reload();
 }
 

@@ -6,25 +6,25 @@ import updateCompares from '../functions/updateCompares';
 
 
 
-const insertionSort = async (howMany, arr, setArr) => {
+const insertionSort = async ({howMany, arr, setArr, speedRef, barsRef, comparesRef}) => {
   let indexOfPreviousCounter;
 
   for (let i = 1; i < howMany; i++) {
     const newArr = arr;
 
-    await sleep();
+    await sleep(speedRef);
 
-    const currentBars = [...document.querySelectorAll('.singleBar')];
+    const currentBars = [...barsRef.current.children];
 
     for (let index = 0; index < i; index++) {
       currentBars[index].style.backgroundColor = 'orange';
     }
-    await sleep();
+    await sleep(speedRef);
 
     currentBars[i].style.backgroundColor = 'yellow';
 
     if (newArr[i] <= newArr[0]) {
-      updateCompares();
+      updateCompares(comparesRef);
       newArr.unshift(newArr.splice(i, 1)[0]);
       for (let index = 0; index < i; index++) {
         currentBars[index].style.backgroundColor = 'red';
@@ -33,10 +33,10 @@ const insertionSort = async (howMany, arr, setArr) => {
 
     } else {
       let flag = true;
-      await sleep();
+      await sleep(speedRef);
       for (let j = 1; j < i; j++) {
-        updateCompares();
-        updateCompares();
+        updateCompares(comparesRef);
+        updateCompares(comparesRef);
 
         if (newArr[i] > newArr[j - 1] && newArr[i] <= newArr[j]) {
           indexOfPreviousCounter = j;
@@ -48,7 +48,7 @@ const insertionSort = async (howMany, arr, setArr) => {
           for (let index = j; index < i; index++) {
             currentBars[index].style.backgroundColor = 'red';
           }
-          updateCompares();
+          updateCompares(comparesRef);
           break;
         }
       }
@@ -59,7 +59,7 @@ const insertionSort = async (howMany, arr, setArr) => {
         indexOfPreviousCounter = i;
       }
     }
-    await sleep();
+    await sleep(speedRef);
     setArr([...newArr]);
     currentBars[indexOfPreviousCounter].style.backgroundColor = 'yellow';
     if (indexOfPreviousCounter !== i) {
@@ -67,8 +67,8 @@ const insertionSort = async (howMany, arr, setArr) => {
 
     }
   }
-  await sleep();
-  setAllToBlue();
+  await sleep(speedRef);
+  setAllToBlue(barsRef);
 
   reload();
 }

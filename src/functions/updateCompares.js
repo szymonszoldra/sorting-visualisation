@@ -1,5 +1,5 @@
-const updateCompares = () => {
-  const compares = parseInt(document.querySelector('.compares').textContent);
+const updateCompares = (comparesRef) => {
+  const compares = parseInt(comparesRef.current.textContent);
   document.querySelector('.compares').textContent = compares + 1;
 }
 
