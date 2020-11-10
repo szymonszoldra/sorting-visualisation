@@ -12,58 +12,58 @@ import mergeSortContainer from '../../algorithms/mergeSort';
 import coctailSort from '../../algorithms/coctailSort';
 
 const Visualisation = () => {
-   const [arr, setArr] = useState(generateArray(30));
-   const {speedRef, comparesRef, buttons} = useContext(AppContext);
-   const barsRef = useRef(null);
-   const eventHandler = (e) => {
-      const params = {howMany: 30, arr, setArr, speedRef, barsRef, comparesRef};
+  const [arr, setArr] = useState(generateArray(30));
+  const {speedRef, comparesRef, buttons} = useContext(AppContext);
+  const barsRef = useRef(null);
+  const eventHandler = (e) => {
+    const params = {howMany: 30, arr, setArr, speedRef, barsRef, comparesRef};
 
-      switch (e.target.id) {
-         case 'bubble':
-            bubbleSort(params);
-            break;
-         case 'selection':
-            selectionSort(params);
-            break;
-         case 'insertion':
-            insertionSort(params);
-            break;
-         case 'merge':
-            alert(
+    switch (e.target.id) {
+      case 'bubble':
+        bubbleSort(params);
+        break;
+        case 'selection':
+        selectionSort(params);
+        break;
+        case 'insertion':
+          insertionSort(params);
+          break;
+        case 'merge':
+          alert(
                'Right know it only sorts the array, still need to figure out how to implement visualisation'
-            );
-            mergeSortContainer(arr, setArr);
-            break;
-         case 'coctail':
-            coctailSort(params);
-            break;
-         default:
-            break;
+          );
+          mergeSortContainer(arr, setArr);
+          break;
+        case 'coctail':
+          coctailSort(params);
+          break;
+        default:
+          break;
       }
       buttons.forEach((btn) => {
-         btn.current.removeEventListener('click', eventHandler);
-         btn.current.disabled = true;
+        btn.current.removeEventListener('click', eventHandler);
+        btn.current.disabled = true;
       });
-   };
+  };
 
-   useEffect(() => {
-      buttons
-         .forEach((btn) => btn.current.addEventListener('click', eventHandler));
-   }, []);
+  useEffect(() => {
+    buttons
+       .forEach((btn) => btn.current.addEventListener('click', eventHandler));
+  }, []);
 
-   return (
-      <VisualisationContainer ref={barsRef}>
-         {arr.map((item, index) => (
-            <SingleBar
-               key={index}
-               className='singleBar'
-               height={Math.floor(item / 12)}
-            >
-               {item}
-            </SingleBar>
-         ))}
-      </VisualisationContainer>
-   );
+  return (
+    <VisualisationContainer ref={barsRef}>
+      {arr.map((item, index) => (
+        <SingleBar
+          key={index}
+          className='singleBar'
+          height={Math.floor(item / 12)}
+        >
+          {item}
+        </SingleBar>
+        ))}
+    </VisualisationContainer>
+  );
 };
 
 export default Visualisation;
