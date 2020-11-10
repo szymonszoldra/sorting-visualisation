@@ -11,6 +11,8 @@ import {
   CompareContainer,
 } from './App.styles';
 
+import GlobalStyles from '../../global.styles';
+
 
 const App = () => {
   const speedRef = useRef(null);
@@ -29,6 +31,7 @@ const App = () => {
       comparesRef,
       buttons
     }}>
+      <GlobalStyles />
       <AppContainer>
         <HeaderContainer>
           <ButtonContainer ref={bubbleButtonRef} id='bubble' className='bubble-btn btn'>
