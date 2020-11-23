@@ -30,7 +30,7 @@ const Visualisation = () => {
           break;
         case 'merge':
           alert(
-               'Right know it only sorts the array, still need to figure out how to implement visualisation'
+               'Right now it only sorts the array, still need to figure out how to implement visualisation'
           );
           mergeSortContainer(arr, setArr);
           break;
