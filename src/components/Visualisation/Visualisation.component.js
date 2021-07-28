@@ -10,7 +10,6 @@ import generateArray from '../../functions/generateArray';
 import bubbleSort from '../../algorithms/bubbleSort';
 import selectionSort from '../../algorithms/selectionSort';
 import insertionSort from '../../algorithms/insertionSort';
-import mergeSortContainer from '../../algorithms/mergeSort';
 import coctailSort from '../../algorithms/coctailSort';
 
 const Visualisation = () => {
@@ -31,12 +30,6 @@ const Visualisation = () => {
         break;
       case 'insertion':
         insertionSort(params);
-        break;
-      case 'merge':
-        alert(
-          'Right now it only sorts the array, still need to figure out how to implement visualisation',
-        );
-        mergeSortContainer(arr, setArr);
         break;
       case 'coctail':
         coctailSort(params);

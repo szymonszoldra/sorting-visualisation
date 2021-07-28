@@ -19,10 +19,9 @@ const App = () => {
   const bubbleButtonRef = useRef(null);
   const selectionButtonRef = useRef(null);
   const insertionButtonRef = useRef(null);
-  const mergeButtonRef = useRef(null);
   const coctailButtonRef = useRef(null);
 
-  const buttons = [bubbleButtonRef, selectionButtonRef, insertionButtonRef, mergeButtonRef, coctailButtonRef];
+  const buttons = [bubbleButtonRef, selectionButtonRef, insertionButtonRef, coctailButtonRef];
 
   return (
     <AppContext.Provider value={{
@@ -42,9 +41,6 @@ const App = () => {
           </ButtonContainer>
           <ButtonContainer ref={insertionButtonRef} id="insertion" className="insertion-btn btn">
             Insertion Sort
-          </ButtonContainer>
-          <ButtonContainer ref={mergeButtonRef} id="merge" className="merge-btn btn">
-            Merge Sort
           </ButtonContainer>
           <ButtonContainer ref={coctailButtonRef} id="coctail" className="coctail-btn btn">
             Coctail Sort
