@@ -4,8 +4,9 @@ import setAllToBlue from '../functions/setAllToBlue';
 import reload from '../functions/reload';
 import updateCompares from '../functions/updateCompares';
 
-
-const coctailSort = async ({howMany, arr, setArr, speedRef, barsRef, comparesRef}) => {
+const coctailSort = async ({
+  howMany, arr, setArr, speedRef, barsRef, comparesRef,
+}) => {
   let bottom = 0;
   let top = howMany - 1;
   let hasChanged = true;
@@ -35,7 +36,6 @@ const coctailSort = async ({howMany, arr, setArr, speedRef, barsRef, comparesRef
         setColor(currentBars[i], currentBars[i + 1], 'red');
         await sleep(speedRef);
       }
-
     }
 
     newArr = arr;
@@ -67,6 +67,6 @@ const coctailSort = async ({howMany, arr, setArr, speedRef, barsRef, comparesRef
   }
   setAllToBlue(barsRef);
   reload();
-}
+};
 
 export default coctailSort;

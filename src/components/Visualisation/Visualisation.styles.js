@@ -14,7 +14,7 @@ export const SingleBar = styled.div`
   width: 36px;
   padding: 0 2px;
   background-color: royalblue;
-  height: ${({ height }) => height + '%'};
+  height: ${({ height }) => `${height}%`};
   padding-top: 10px;
   text-align: center;
   font-size: 14px;

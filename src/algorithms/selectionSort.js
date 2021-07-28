@@ -4,9 +4,9 @@ import setAllToBlue from '../functions/setAllToBlue';
 import reload from '../functions/reload';
 import updateCompares from '../functions/updateCompares';
 
-
-
-const selectionSort = async ({howMany, arr, setArr, speedRef, barsRef, comparesRef}) => {
+const selectionSort = async ({
+  howMany, arr, setArr, speedRef, barsRef, comparesRef,
+}) => {
   for (let i = 0; i < howMany; i++) {
     let currentSmallest = i;
     const newArr = arr;
@@ -30,7 +30,6 @@ const selectionSort = async ({howMany, arr, setArr, speedRef, barsRef, comparesR
       setArr([...newArr]);
     }
 
-
     const currentBars = [...barsRef.current.children];
 
     if (newArr[currentSmallest] !== newArr[i]) {
@@ -48,10 +47,9 @@ const selectionSort = async ({howMany, arr, setArr, speedRef, barsRef, comparesR
       await sleep(speedRef);
       await sleep(speedRef);
     }
-
   }
   setAllToBlue(barsRef);
   reload();
-}
+};
 
 export default selectionSort;

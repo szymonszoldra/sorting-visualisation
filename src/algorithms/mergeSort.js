@@ -14,22 +14,22 @@ const mergeSortContainer = (arr, setArr) => {
       }
     }
     return result.concat([...left]).concat([...right]);
-  }
+  };
 
-  const mergeSort = (newArr) => {
-    if (newArr.length <= 1) {
-      return newArr
+  const mergeSort = (newArrArg) => {
+    if (newArrArg.length <= 1) {
+      return newArrArg;
     }
-    const length = newArr.length;
+    const { length } = newArrArg;
     const middle = Math.floor(length / 2);
-    const left = newArr.slice(0, middle);
-    const right = newArr.slice(middle);
+    const left = newArrArg.slice(0, middle);
+    const right = newArrArg.slice(middle);
 
     return merge(mergeSort(left), mergeSort(right));
-  }
+  };
 
   setArr(mergeSort(newArr));
   reload();
-}
+};
 
 export default mergeSortContainer;

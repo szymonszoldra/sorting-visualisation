@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 
 import AppContext from '../../context/AppContext';
 
@@ -12,7 +12,6 @@ import {
 } from './App.styles';
 
 import GlobalStyles from '../../global.styles';
-
 
 const App = () => {
   const speedRef = useRef(null);
@@ -29,42 +28,45 @@ const App = () => {
     <AppContext.Provider value={{
       speedRef,
       comparesRef,
-      buttons
-    }}>
+      buttons,
+    }}
+    >
       <GlobalStyles />
       <AppContainer>
         <HeaderContainer>
-          <ButtonContainer ref={bubbleButtonRef} id='bubble' className='bubble-btn btn'>
+          <ButtonContainer ref={bubbleButtonRef} id="bubble" className="bubble-btn btn">
             Bubble Sort
           </ButtonContainer>
-          <ButtonContainer ref={selectionButtonRef} id='selection' className='selection-btn btn'>
+          <ButtonContainer ref={selectionButtonRef} id="selection" className="selection-btn btn">
             Selection Sort
           </ButtonContainer>
-          <ButtonContainer ref={insertionButtonRef} id='insertion' className='insertion-btn btn'>
+          <ButtonContainer ref={insertionButtonRef} id="insertion" className="insertion-btn btn">
             Insertion Sort
           </ButtonContainer>
-          <ButtonContainer ref={mergeButtonRef} id='merge' className='merge-btn btn'>
+          <ButtonContainer ref={mergeButtonRef} id="merge" className="merge-btn btn">
             Merge Sort
           </ButtonContainer>
-          <ButtonContainer ref={coctailButtonRef} id='coctail' className='coctail-btn btn'>
+          <ButtonContainer ref={coctailButtonRef} id="coctail" className="coctail-btn btn">
             Coctail Sort
           </ButtonContainer>
-          <label htmlFor='speed'>Speed:</label>
+          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+          <label htmlFor="speed">Speed:</label>
           <input
             ref={speedRef}
             style={{ direction: 'rtl' }}
-            id='speed'
-            type='range'
-            name='speed'
-            min='10'
-            max='1000'
-            defaultValue='300'
-          ></input>
+            id="speed"
+            type="range"
+            name="speed"
+            min="10"
+            max="1000"
+            defaultValue="300"
+          />
           <CompareContainer>
-            Compares: <span ref={comparesRef} className='compares'>0</span>
+            Compares:
+            <span ref={comparesRef} className="compares">0</span>
           </CompareContainer>
         </HeaderContainer>
-        <Visualisation/>
+        <Visualisation />
       </AppContainer>
     </AppContext.Provider>
   );

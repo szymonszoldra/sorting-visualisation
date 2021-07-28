@@ -4,7 +4,9 @@ import setAllToBlue from '../functions/setAllToBlue';
 import reload from '../functions/reload';
 import updateCompares from '../functions/updateCompares';
 
-const bubbleSort = async ({howMany, arr, setArr, speedRef, barsRef, comparesRef}) => {
+const bubbleSort = async ({
+  howMany, arr, setArr, speedRef, barsRef, comparesRef,
+}) => {
   let counter = 1;
   for (let i = 0; i < howMany; i++) {
     counter = 0;
@@ -40,4 +42,4 @@ const bubbleSort = async ({howMany, arr, setArr, speedRef, barsRef, comparesRef}
   reload();
 };
 
-export default bubbleSort
+export default bubbleSort;

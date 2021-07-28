@@ -3,10 +3,9 @@ import setAllToBlue from '../functions/setAllToBlue';
 import reload from '../functions/reload';
 import updateCompares from '../functions/updateCompares';
 
-
-
-
-const insertionSort = async ({howMany, arr, setArr, speedRef, barsRef, comparesRef}) => {
+const insertionSort = async ({
+  howMany, arr, setArr, speedRef, barsRef, comparesRef,
+}) => {
   let indexOfPreviousCounter;
 
   for (let i = 1; i < howMany; i++) {
@@ -30,7 +29,6 @@ const insertionSort = async ({howMany, arr, setArr, speedRef, barsRef, comparesR
         currentBars[index].style.backgroundColor = 'red';
       }
       indexOfPreviousCounter = 0;
-
     } else {
       let flag = true;
       await sleep(speedRef);
@@ -64,13 +62,12 @@ const insertionSort = async ({howMany, arr, setArr, speedRef, barsRef, comparesR
     currentBars[indexOfPreviousCounter].style.backgroundColor = 'yellow';
     if (indexOfPreviousCounter !== i) {
       currentBars[i].style.backgroundColor = 'red';
-
     }
   }
   await sleep(speedRef);
   setAllToBlue(barsRef);
 
   reload();
-}
+};
 
 export default insertionSort;
