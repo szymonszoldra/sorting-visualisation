@@ -3,6 +3,7 @@ import sleep from '../functions/sleep';
 import setAllToBlue from '../functions/setAllToBlue';
 import reload from '../functions/reload';
 import updateCompares from '../functions/updateCompares';
+import swap from '../functions/swap';
 
 import { SortingFunctionProps } from '../types';
 
@@ -39,9 +40,7 @@ const selectionSort = async ({
       setColor(currentBars[currentSmallest], currentBars[i], 'orange');
       updateCompares(comparesRef);
       await sleep(speedRef);
-      const temp = newArr[currentSmallest].value;
-      newArr[currentSmallest].value = newArr[i].value;
-      newArr[i].value = temp;
+      swap(newArr[i], newArr[currentSmallest]);
       setArr([...newArr]);
     } else {
       currentBars[currentSmallest].style.backgroundColor = 'orange';

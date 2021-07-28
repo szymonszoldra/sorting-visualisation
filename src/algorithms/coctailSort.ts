@@ -3,6 +3,7 @@ import sleep from '../functions/sleep';
 import setAllToBlue from '../functions/setAllToBlue';
 import reload from '../functions/reload';
 import updateCompares from '../functions/updateCompares';
+import swap from '../functions/swap';
 
 import { SortingFunctionProps } from '../types';
 
@@ -28,9 +29,7 @@ const coctailSort = async ({
       if (newArr[i].value > newArr[i + 1].value) {
         setColor(currentBars[i], currentBars[i + 1], 'green');
         await sleep(speedRef);
-        const temp = newArr[i].value;
-        newArr[i].value = newArr[i + 1].value;
-        newArr[i + 1].value = temp;
+        swap(newArr[i], newArr[i + 1]);
         hasChanged = true;
         setArr([...newArr]);
         await sleep(speedRef);
@@ -52,9 +51,7 @@ const coctailSort = async ({
       if (newArr[i].value < newArr[i - 1].value) {
         setColor(currentBars[i], currentBars[i - 1], 'green');
         await sleep(speedRef);
-        const temp = newArr[i].value;
-        newArr[i].value = newArr[i - 1].value;
-        newArr[i - 1].value = temp;
+        swap(newArr[i], newArr[i - 1]);
         hasChanged = true;
 
         setArr([...newArr]);

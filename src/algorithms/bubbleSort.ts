@@ -3,6 +3,7 @@ import sleep from '../functions/sleep';
 import setAllToBlue from '../functions/setAllToBlue';
 import reload from '../functions/reload';
 import updateCompares from '../functions/updateCompares';
+import swap from '../functions/swap';
 
 import { SortingFunctionProps } from '../types';
 
@@ -26,10 +27,7 @@ const bubbleSort = async ({
       if (newArr[j].value > newArr[j + 1].value) {
         setColor(currentBars[j], currentBars[j + 1], 'green');
         await sleep(speedRef);
-
-        const temp = newArr[j].value;
-        newArr[j].value = newArr[j + 1].value;
-        newArr[j + 1].value = temp;
+        swap(newArr[j], newArr[j + 1]);
         counter++;
       } else {
         setColor(currentBars[j], currentBars[j + 1], 'red');
