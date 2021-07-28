@@ -12,16 +12,18 @@ import selectionSort from '../../algorithms/selectionSort';
 import insertionSort from '../../algorithms/insertionSort';
 import coctailSort from '../../algorithms/coctailSort';
 
+import { Context } from '../../types';
+
 const Visualisation = () => {
-  const [arr, setArr] = useState(generateArray(30));
-  const { speedRef, comparesRef, buttons } = useContext(AppContext);
-  const barsRef = useRef(null);
-  const eventHandler = (e) => {
+  const [arr, setArr] = useState<number[]>(generateArray(30));
+  const { speedRef, comparesRef, buttons } = useContext<Context>(AppContext);
+  const barsRef = useRef<HTMLDivElement>(null);
+  const eventHandler = (e: MouseEvent): void => {
     const params = {
       howMany: 30, arr, setArr, speedRef, barsRef, comparesRef,
     };
 
-    switch (e.target.id) {
+    switch ((e.target as HTMLButtonElement).id) {
       case 'bubble':
         bubbleSort(params);
         break;
@@ -37,15 +39,14 @@ const Visualisation = () => {
       default:
         break;
     }
-    buttons.forEach((btn) => {
-      btn.current.removeEventListener('click', eventHandler);
-      btn.current.disabled = true;
+    buttons.forEach((btn: React.RefObject<HTMLButtonElement>) => {
+      btn.current!.removeEventListener('click', eventHandler);
+      btn.current!.disabled = true;
     });
   };
 
   useEffect(() => {
-    buttons
-      .forEach((btn) => btn.current.addEventListener('click', eventHandler));
+    buttons.forEach((btn: React.RefObject<HTMLButtonElement>) => btn.current!.addEventListener('click', eventHandler));
   }, []);
 
   return (

@@ -14,12 +14,12 @@ import {
 import GlobalStyles from '../../global.styles';
 
 const App = () => {
-  const speedRef = useRef(null);
-  const comparesRef = useRef(null);
-  const bubbleButtonRef = useRef(null);
-  const selectionButtonRef = useRef(null);
-  const insertionButtonRef = useRef(null);
-  const coctailButtonRef = useRef(null);
+  const speedRef = useRef<HTMLInputElement>(null);
+  const comparesRef = useRef<HTMLSpanElement>(null);
+  const bubbleButtonRef = useRef<HTMLButtonElement>(null);
+  const selectionButtonRef = useRef<HTMLButtonElement>(null);
+  const insertionButtonRef = useRef<HTMLButtonElement>(null);
+  const coctailButtonRef = useRef<HTMLButtonElement>(null);
 
   const buttons = [bubbleButtonRef, selectionButtonRef, insertionButtonRef, coctailButtonRef];
 

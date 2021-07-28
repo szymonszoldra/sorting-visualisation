@@ -4,9 +4,11 @@ import setAllToBlue from '../functions/setAllToBlue';
 import reload from '../functions/reload';
 import updateCompares from '../functions/updateCompares';
 
+import { SortingFunctionProps } from '../types';
+
 const bubbleSort = async ({
   howMany, arr, setArr, speedRef, barsRef, comparesRef,
-}) => {
+}: SortingFunctionProps): Promise<void> => {
   let counter = 1;
   for (let i = 0; i < howMany; i++) {
     counter = 0;
@@ -14,7 +16,7 @@ const bubbleSort = async ({
       const newArr = arr;
       await sleep(speedRef);
 
-      const currentBars = [...barsRef.current.children];
+      const currentBars = Array.from(barsRef!.current!.children) as HTMLDivElement[];
       setAllToBlue(barsRef);
 
       setColor(currentBars[j], currentBars[j + 1], 'yellow');

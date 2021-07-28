@@ -1,4 +1,4 @@
-const generateArray = (howMany) => {
+const generateArray = (howMany: number): Array<number> => {
   const arr = [];
 
   for (let i = 0; i < howMany; i++) {

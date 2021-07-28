@@ -3,17 +3,19 @@ import setAllToBlue from '../functions/setAllToBlue';
 import reload from '../functions/reload';
 import updateCompares from '../functions/updateCompares';
 
+import { SortingFunctionProps } from '../types';
+
 const insertionSort = async ({
   howMany, arr, setArr, speedRef, barsRef, comparesRef,
-}) => {
-  let indexOfPreviousCounter;
+}: SortingFunctionProps): Promise<void> => {
+  let indexOfPreviousCounter: number;
 
   for (let i = 1; i < howMany; i++) {
     const newArr = arr;
 
     await sleep(speedRef);
 
-    const currentBars = [...barsRef.current.children];
+    const currentBars = Array.from(barsRef!.current!.children) as HTMLDivElement[];
 
     for (let index = 0; index < i; index++) {
       currentBars[index].style.backgroundColor = 'orange';
@@ -59,8 +61,8 @@ const insertionSort = async ({
     }
     await sleep(speedRef);
     setArr([...newArr]);
-    currentBars[indexOfPreviousCounter].style.backgroundColor = 'yellow';
-    if (indexOfPreviousCounter !== i) {
+    currentBars[indexOfPreviousCounter!].style.backgroundColor = 'yellow';
+    if (indexOfPreviousCounter! !== i) {
       currentBars[i].style.backgroundColor = 'red';
     }
   }

@@ -10,7 +10,7 @@ export const VisualisationContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const SingleBar = styled.div`
+export const SingleBar = styled.div<{height: number}>`
   width: 36px;
   padding: 0 2px;
   background-color: royalblue;

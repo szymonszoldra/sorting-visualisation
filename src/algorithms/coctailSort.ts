@@ -4,9 +4,11 @@ import setAllToBlue from '../functions/setAllToBlue';
 import reload from '../functions/reload';
 import updateCompares from '../functions/updateCompares';
 
+import { SortingFunctionProps } from '../types';
+
 const coctailSort = async ({
   howMany, arr, setArr, speedRef, barsRef, comparesRef,
-}) => {
+}: SortingFunctionProps): Promise<void> => {
   let bottom = 0;
   let top = howMany - 1;
   let hasChanged = true;
@@ -18,7 +20,7 @@ const coctailSort = async ({
     hasChanged = false;
 
     for (let i = bottom; i < top; i++) {
-      const currentBars = [...barsRef.current.children];
+      const currentBars = Array.from(barsRef!.current!.children) as HTMLDivElement[];
       setAllToBlue(barsRef);
       setColor(currentBars[i], currentBars[i + 1], 'yellow');
       await sleep(speedRef);
@@ -42,7 +44,7 @@ const coctailSort = async ({
     top--;
 
     for (let i = top; i > bottom; i--) {
-      const currentBars = [...barsRef.current.children];
+      const currentBars = Array.from(barsRef!.current!.children) as HTMLDivElement[];
       setAllToBlue(barsRef);
       setColor(currentBars[i], currentBars[i - 1], 'yellow');
       await sleep(speedRef);
