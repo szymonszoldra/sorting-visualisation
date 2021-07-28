@@ -2,11 +2,11 @@
 
 import { InputRef } from '../types';
 
-interface props {
+interface args {
   current: InputRef
 }
 
-const sleep = async ({ current }: props): Promise<void> => {
+const sleep = async ({ current }: args): Promise<void> => {
   const delay = Number(current?.value);
   return new Promise((resolve) => setTimeout(resolve, delay));
 };

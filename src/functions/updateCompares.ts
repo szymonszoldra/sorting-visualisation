@@ -1,10 +1,10 @@
 import { SpanRef } from '../types';
 
-interface props {
+interface args {
   current: SpanRef
 }
 
-const updateCompares = ({ current }: props): void => {
+const updateCompares = ({ current }: args): void => {
   const compares = Number(current?.textContent);
   current!.textContent = String(compares + 1);
 };
