@@ -5,19 +5,17 @@ import reload from '../functions/reload';
 import updateCompares from '../functions/updateCompares';
 import swap from '../functions/swap';
 
-import { SortingFunctionProps } from '../types';
+import { SortingFunction } from '../types';
 
 const coctailSort = async ({
   howMany, arr, setArr, speedRef, barsRef, comparesRef,
-}: SortingFunctionProps): Promise<void> => {
+}: SortingFunction): Promise<void> => {
   let bottom = 0;
   let top = howMany - 1;
   let hasChanged = true;
 
   while (hasChanged) {
     await sleep(speedRef);
-
-    let newArr = arr;
     hasChanged = false;
 
     for (let i = bottom; i < top; i++) {
@@ -26,12 +24,12 @@ const coctailSort = async ({
       setColor(currentBars[i], currentBars[i + 1], 'yellow');
       await sleep(speedRef);
       updateCompares(comparesRef);
-      if (newArr[i].value > newArr[i + 1].value) {
+      if (arr[i].value > arr[i + 1].value) {
         setColor(currentBars[i], currentBars[i + 1], 'green');
         await sleep(speedRef);
-        swap(newArr[i], newArr[i + 1]);
+        swap(arr[i], arr[i + 1]);
         hasChanged = true;
-        setArr([...newArr]);
+        setArr([...arr]);
         await sleep(speedRef);
       } else {
         setColor(currentBars[i], currentBars[i + 1], 'red');
@@ -39,7 +37,6 @@ const coctailSort = async ({
       }
     }
 
-    newArr = arr;
     top--;
 
     for (let i = top; i > bottom; i--) {
@@ -48,20 +45,19 @@ const coctailSort = async ({
       setColor(currentBars[i], currentBars[i - 1], 'yellow');
       await sleep(speedRef);
       updateCompares(comparesRef);
-      if (newArr[i].value < newArr[i - 1].value) {
+      if (arr[i].value < arr[i - 1].value) {
         setColor(currentBars[i], currentBars[i - 1], 'green');
         await sleep(speedRef);
-        swap(newArr[i], newArr[i - 1]);
+        swap(arr[i], arr[i - 1]);
         hasChanged = true;
 
-        setArr([...newArr]);
+        setArr([...arr]);
         await sleep(speedRef);
       } else {
         setColor(currentBars[i], currentBars[i - 1], 'red');
         await sleep(speedRef);
       }
     }
-    newArr = arr;
     bottom++;
   }
   setAllToBlue(barsRef);

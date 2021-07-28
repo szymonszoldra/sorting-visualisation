@@ -14,7 +14,7 @@ export interface Context {
   comparesRef: React.RefObject<HTMLSpanElement>,
 }
 
-export interface SortingFunctionProps {
+export interface SortingFunction {
   howMany: number,
   arr: Array<ArrElement>,
   setArr: setterFunction,
