@@ -1,6 +1,12 @@
 # Sorting Visualisation
 
-This project was built by me from scratch, without using any tutorials. My main idea was to learn how React Hooks and Styled Components work.
+UPDATE July 2021
+
+The application was rewritten to TypeScript and refactored a bit.
+
+This is not the most idiomatic way of writing React, but React was used simply as a tool for displaying algorithms, so I allowed myself to bend some rules (mainly with the way I change the state of the application by modifying the array not only with a setter). My assumption is that if you know the rules, you can break them for your own purposes. :)
+
+I wrote the app on my own, any similarities are coincidental.
 
 ## live version
 
@@ -8,18 +14,18 @@ see it live [**here**](https://szymonszoldra.github.io/sorting-visualisation/)
 
 ### algorithms
 
--  bubble sort
--  selection sort
--  insertion sort
--  coctail shaker sort
--  merge sort (only the algorithm so far)
+- bubble sort
+- selection sort
+- insertion sort
+- coctail shaker sort
 
 ### technologies
 
--  React.js
--  React Hooks
--  Styled Components
--  HTML 5
+- TypeScript
+- React.js
+- React Hooks
+- Styled Components
+- ESLint (airbnb base)
 
 ### instalation
 
@@ -31,7 +37,5 @@ see it live [**here**](https://szymonszoldra.github.io/sorting-visualisation/)
 npm install
 npm start
 ```
-
-if you do not have the _Node Package Manager_ on your computer you can download it from [**here**](https://nodejs.org/en/download/)
 
 the application will start by default on **localhost:3000/**
