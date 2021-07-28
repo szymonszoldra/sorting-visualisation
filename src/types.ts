@@ -1,7 +1,12 @@
 import * as React from 'react';
 
+export interface ArrElement {
+  value: number,
+  id: string
+}
+
 // eslint-disable-next-line no-unused-vars
-type setterFunction = (arr: Array<number>) => void;
+type setterFunction = (arr: Array<ArrElement>) => void;
 
 export interface Context {
   speedRef: React.RefObject<HTMLInputElement>,
@@ -11,7 +16,7 @@ export interface Context {
 
 export interface SortingFunctionProps {
   howMany: number,
-  arr: Array<number>,
+  arr: Array<ArrElement>,
   setArr: setterFunction,
   speedRef: React.RefObject<HTMLInputElement>,
   barsRef: React.RefObject<HTMLDivElement>,

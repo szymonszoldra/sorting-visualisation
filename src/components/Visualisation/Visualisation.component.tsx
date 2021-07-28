@@ -12,12 +12,13 @@ import selectionSort from '../../algorithms/selectionSort';
 import insertionSort from '../../algorithms/insertionSort';
 import coctailSort from '../../algorithms/coctailSort';
 
-import { Context } from '../../types';
+import { Context, ArrElement } from '../../types';
 
 const Visualisation = () => {
-  const [arr, setArr] = useState<number[]>(generateArray(30));
+  const [arr, setArr] = useState<ArrElement[]>(() => generateArray(30));
   const { speedRef, comparesRef, buttons } = useContext<Context>(AppContext);
   const barsRef = useRef<HTMLDivElement>(null);
+
   const eventHandler = (e: MouseEvent): void => {
     const params = {
       howMany: 30, arr, setArr, speedRef, barsRef, comparesRef,
@@ -51,15 +52,13 @@ const Visualisation = () => {
 
   return (
     <VisualisationContainer ref={barsRef}>
-      {arr.map((item, index) => (
+      {arr.map((item) => (
         <SingleBar
-          // temp
-          // eslint-disable-next-line react/no-array-index-key
-          key={index}
+          key={item.id}
           className="singleBar"
-          height={Math.floor(item / 12)}
+          height={Math.floor(item.value / 12)}
         >
-          {item}
+          {item.value}
         </SingleBar>
       ))}
     </VisualisationContainer>

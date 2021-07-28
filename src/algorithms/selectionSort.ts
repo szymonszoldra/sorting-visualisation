@@ -22,7 +22,7 @@ const selectionSort = async ({
       updateCompares(comparesRef);
       await sleep(speedRef);
 
-      if (newArr[currentSmallest] > newArr[j]) {
+      if (newArr[currentSmallest].value > newArr[j].value) {
         setColor(currentBars[currentSmallest], currentBars[j], 'green');
         currentSmallest = j;
       } else {
@@ -34,14 +34,14 @@ const selectionSort = async ({
 
     const currentBars = Array.from(barsRef!.current!.children) as HTMLDivElement[];
 
-    if (newArr[currentSmallest] !== newArr[i]) {
+    if (newArr[currentSmallest].value !== newArr[i].value) {
       setAllToBlue(barsRef);
       setColor(currentBars[currentSmallest], currentBars[i], 'orange');
       updateCompares(comparesRef);
       await sleep(speedRef);
-      const temp = newArr[currentSmallest];
-      newArr[currentSmallest] = newArr[i];
-      newArr[i] = temp;
+      const temp = newArr[currentSmallest].value;
+      newArr[currentSmallest].value = newArr[i].value;
+      newArr[i].value = temp;
       setArr([...newArr]);
     } else {
       currentBars[currentSmallest].style.backgroundColor = 'orange';

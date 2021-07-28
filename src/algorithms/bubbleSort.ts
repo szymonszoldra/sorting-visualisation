@@ -23,13 +23,13 @@ const bubbleSort = async ({
       updateCompares(comparesRef);
       await sleep(speedRef);
 
-      if (newArr[j] > newArr[j + 1]) {
+      if (newArr[j].value > newArr[j + 1].value) {
         setColor(currentBars[j], currentBars[j + 1], 'green');
         await sleep(speedRef);
 
-        const temp = newArr[j];
-        newArr[j] = newArr[j + 1];
-        newArr[j + 1] = temp;
+        const temp = newArr[j].value;
+        newArr[j].value = newArr[j + 1].value;
+        newArr[j + 1].value = temp;
         counter++;
       } else {
         setColor(currentBars[j], currentBars[j + 1], 'red');

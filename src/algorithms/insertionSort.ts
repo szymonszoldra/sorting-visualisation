@@ -24,7 +24,7 @@ const insertionSort = async ({
 
     currentBars[i].style.backgroundColor = 'yellow';
 
-    if (newArr[i] <= newArr[0]) {
+    if (newArr[i].value <= newArr[0].value) {
       updateCompares(comparesRef);
       newArr.unshift(newArr.splice(i, 1)[0]);
       for (let index = 0; index < i; index++) {
@@ -38,7 +38,7 @@ const insertionSort = async ({
         updateCompares(comparesRef);
         updateCompares(comparesRef);
 
-        if (newArr[i] > newArr[j - 1] && newArr[i] <= newArr[j]) {
+        if (newArr[i].value > newArr[j - 1].value && newArr[i].value <= newArr[j].value) {
           indexOfPreviousCounter = j;
           for (let index = 0; index < j; index++) {
             currentBars[index].style.backgroundColor = 'green';

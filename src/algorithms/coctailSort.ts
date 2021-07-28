@@ -25,12 +25,12 @@ const coctailSort = async ({
       setColor(currentBars[i], currentBars[i + 1], 'yellow');
       await sleep(speedRef);
       updateCompares(comparesRef);
-      if (newArr[i] > newArr[i + 1]) {
+      if (newArr[i].value > newArr[i + 1].value) {
         setColor(currentBars[i], currentBars[i + 1], 'green');
         await sleep(speedRef);
-        const temp = newArr[i];
-        newArr[i] = newArr[i + 1];
-        newArr[i + 1] = temp;
+        const temp = newArr[i].value;
+        newArr[i].value = newArr[i + 1].value;
+        newArr[i + 1].value = temp;
         hasChanged = true;
         setArr([...newArr]);
         await sleep(speedRef);
@@ -49,12 +49,12 @@ const coctailSort = async ({
       setColor(currentBars[i], currentBars[i - 1], 'yellow');
       await sleep(speedRef);
       updateCompares(comparesRef);
-      if (newArr[i] < newArr[i - 1]) {
+      if (newArr[i].value < newArr[i - 1].value) {
         setColor(currentBars[i], currentBars[i - 1], 'green');
         await sleep(speedRef);
-        const temp = newArr[i];
-        newArr[i] = newArr[i - 1];
-        newArr[i - 1] = temp;
+        const temp = newArr[i].value;
+        newArr[i].value = newArr[i - 1].value;
+        newArr[i - 1].value = temp;
         hasChanged = true;
 
         setArr([...newArr]);

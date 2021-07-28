@@ -1,8 +1,15 @@
-const generateArray = (howMany: number): Array<number> => {
+import { v4 as uuid } from 'uuid';
+
+import { ArrElement } from '../types';
+
+const generateArray = (howMany: number): Array<ArrElement> => {
   const arr = [];
 
   for (let i = 0; i < howMany; i++) {
-    arr.push(Math.floor(Math.random() * 1100) + 100);
+    arr.push({
+      value: Math.floor(Math.random() * 1100) + 100,
+      id: uuid(),
+    });
   }
   return arr;
 };
